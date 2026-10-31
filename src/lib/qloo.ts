@@ -76,7 +76,11 @@ export async function searchArtists(query: string): Promise<Entity[]> {
 }
 
 export async function findVenueTag(): Promise<string | undefined> {
-  const body = await get("/v2/tags", { "filter.query": "music venue", take: 5 });
+  const body = await get("/v2/tags", {
+    "filter.query": "music venue",
+    "filter.tag.types": "urn:tag:category:place",
+    take: 5,
+  });
   const tags = body?.results?.tags ?? [];
   return tags[0]?.id ?? tags[0]?.tag_id;
 }
