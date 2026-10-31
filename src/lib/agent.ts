@@ -3,7 +3,7 @@ import * as qloo from "./qloo";
 import type { Entity } from "./qloo";
 
 const MAX_TURNS = 12;
-const TIME_BUDGET_MS = 30000;
+const TIME_BUDGET_MS = 45000;
 
 export type TourInput = { artist: string; country: string; stops: number };
 

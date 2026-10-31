@@ -29,7 +29,7 @@ const providers = (): Provider[] =>
       name: "openrouter",
       url: "https://openrouter.ai/api/v1/chat/completions",
       key: process.env.OPENROUTER_API_KEY,
-      model: process.env.OPENROUTER_MODEL || "google/gemini-2.5-flash",
+      model: process.env.OPENROUTER_MODEL || "nvidia/nemotron-3.5-lightning:free",
     },
   ].filter((provider) => provider.key);
 
@@ -46,7 +46,8 @@ export async function chat(messages: Message[], tools: object[]): Promise<Messag
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ model: provider.model, messages, tools, tool_choice: "required" }),
-        signal: AbortSignal.timeout(8000),
+        // OpenRouter's free models queue, so they get longer than Gemini.
+        signal: AbortSignal.timeout(provider.name === "openrouter" ? 20000 : 8000),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const message = (await res.json()).choices?.[0]?.message;
