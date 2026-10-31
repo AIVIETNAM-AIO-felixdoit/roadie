@@ -4,8 +4,11 @@ Trên máy mới, mở thư mục này bằng Claude Code rồi nói: "Đọc HA
 
 ## Mốc thời gian
 
-- **Hạn nộp: 31/10/2026 lúc 10:45 giờ VN** (30/10, 23:45 giờ ET).
-- Mục tiêu: có key Qloo trước 8:00, deploy xong trước 9:30, giữ 1 tiếng dự phòng.
+- **Hạn nộp gốc đã qua: 31/10/2026 lúc 10:45 giờ VN** (30/10, 23:45 giờ ET).
+- Lúc 16:11 ngày 31/10, người dùng thấy Devpost vẫn cho cập nhật, nhưng **chưa xác nhận** đó là
+  bài nộp hay chỉ là project trong portfolio. Luật cho sửa portfolio sau hạn, không cho sửa bài nộp.
+- Việc đầu tiên trên máy mới: hỏi người dùng trang Devpost đang hiện trạng thái và deadline nào,
+  và đơn nộp muộn có được chấp nhận không. Kiểm tra lại giờ hiện tại trước khi lập kế hoạch.
 - Top 3 phải rảnh để lên sóng cùng giám khảo ngày 5/11.
 
 ## Trạng thái
@@ -22,10 +25,14 @@ nghệ sĩ diễn cùng, brand, rồi tính lộ trình. Stack: Next.js 15.5.28,
 | Giao diện trên trình duyệt | Chưa bấm thử |
 | Bước từ chối tên do model tự nghĩ ra | Chưa gặp trường hợp thực tế |
 | Hạn mức miễn phí của Gemini | Chưa rõ |
-| Git, GitHub, Vercel | Chưa làm, repo chưa `git init` |
+| GitHub | Xong: repo public, GitHub nhận license MIT |
+| Vercel và link demo | Chưa làm, người dùng cần tạo tài khoản Vercel |
 | Bài mô tả trên Devpost | Chưa viết |
 
-Form xin key Qloo đã gửi. Tin nhắn nhờ xử lý nhanh trên Discord (#api-help) đã được soạn.
+Repo: https://github.com/AIVIETNAM-AIO-felixdoit/roadie
+
+Form xin key Qloo đã gửi, nhưng đến 16:11 ngày 31/10 vẫn chưa có key. Key gửi về email đã điền
+trong form. Nếu chưa có, hỏi lại trên Discord (#api-help).
 
 ## Thiết lập trên máy mới
 
@@ -54,10 +61,9 @@ tuyệt đối không được có tiền tố `NEXT_PUBLIC_`.
    - Liệu `signal.interests.entities` có nhận nhiều id cách nhau bằng dấu phẩy không.
 3. Kiểm tra nghệ sĩ nhỏ có trong Qloo không, và dữ liệu theo địa lý có đủ dùng không.
 4. Bấm thử giao diện trên trình duyệt, cả ở độ rộng điện thoại.
-5. `git init`, push lên repo **public** (người dùng phải xác nhận trước), rồi kiểm tra GitHub
-   hiện license MIT ở mục About.
-6. Deploy lên Vercel gói Hobby, thêm biến môi trường trên Vercel, test link công khai.
-7. Viết mô tả tiếng Anh trên Devpost: tính năng, và vì sao bỏ Qloo thì app không chạy được.
+5. Deploy lên Vercel gói Hobby, thêm biến môi trường trên Vercel, test link công khai.
+6. Viết mô tả tiếng Anh trên Devpost: tính năng, và vì sao bỏ Qloo thì app không chạy được.
+7. Xóa `HANDOFF.md` khỏi repo trước khi nộp bài.
 
 Nếu còn thời gian: làm vài lịch tour mẫu từ dữ liệu thật để giám khảo vẫn xem được khi hết hạn
 mức Gemini, và so sánh với kết quả của LLM không có Qloo.
